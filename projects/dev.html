@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Listing Platform</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+
+        header {
+            background-color: #00ab2b;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-title {
+            font-size: 2rem;
+            font-weight: bold;
+            font-style: italic;
+            text-align: left;
+            margin: 0;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 0.5rem;
+            text-align: center;
+        }
+
+        nav a {
+            color: rgb(255, 0, 0);
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        #search-bar {
+            padding: 1rem;
+            text-align: center;
+            background-color: #f7f7f7;
+        }
+
+        #search-bar input {
+            width: 70%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #search-bar button {
+            padding: 0.8rem 1.5rem;
+            background-color: #00ab2b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #search-bar button:hover {
+            background-color: #008d23;
+        }
+
+        #hero-section {
+            text-align: center;
+            padding: 3rem;
+            background-color: #f60087;
+            color: white;
+        }
+
+        #service-list {
+            padding: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .service-item {
+            border: 1px solid #ddd;
+            margin: 10px;
+            padding: 15px;
+            width: 30%;
+            background-color: #fff;
+            border-radius: 8px;
+        }
+
+        .service-item h3 {
+            margin-top: 0;
+        }
+
+        #testimonials {
+            background-color: #fff;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .testimonial-item {
+            margin: 1rem;
+            border: 1px solid #ddd;
+            padding: 1rem;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        #faq {
+            padding: 2rem;
+            background-color: #e7e7e7;
+        }
+
+        #contact {
+            padding: 2rem;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        form input, form textarea {
+            padding: 0.8rem;
+            margin: 10px 0;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            background-color: #fd7f00;
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #0000008c;
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            width: 200px;
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            overflow-y: auto;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .sidebar.active {
+            transform: translateX(0);
+        }
+
+        .sidebar h3 {
+            color: #fff;
+            font-size: 1.2rem;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #00ab2b;
+        }
+
+        /* Hamburger Icon */
+        .hamburger {
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: white;
+            display: inline-block;
+        }
+
+        /* Adjust main layout */
+        main {
+            padding-left: 20px;
+            transition: padding-left 0.3s ease-in-out;
+        }
+
+        main.shift {
+            padding-left: 220px; /* Adjust padding when sidebar is open */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hamburger" onclick="toggleSidebar()">☰</div>
+        <h1 class="header-title">At Your Door</h1>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="1.html">Services</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+    </nav>
+    <div id="search-bar">
+        <input type="text" placeholder="Search for a service...">
+        <button>Search</button>
+    </div>
+    <div class="sidebar" id="sidebar">
+        <h3>Categories</h3>
+        <ul>
+            <li><a href="#plumbing">Plumbing</a></li>
+            <li><a href="#electrician">Electrician</a></li>
+            <li><a href="#cleaning">Cleaning</a></li>
+            <li><a href="#gardening">Gardening</a></li>
+        </ul>
+    </div>
+    <section id="hero-section">
+        <h2>Welcome to Your One-Stop Service Hub</h2>
+        <p>Connecting you with top service providers in your area.</p>
+    </section>
+    <main id="main-content">
+        <div id="service-list">
+            <div class="service-item">
+                <h3>Plumbing Services</h3>
+                <p>Quick and reliable plumbing solutions for your home.</p>
+                <p>Contact: (123) 456-7890 | Email: plumbing@example.com</p>
+            </div>
+            <div class="service-item">
+                <h3>Electrician Services</h3>
+                <p>Rating: 4.8 ★</p>
+                <p>Expert electrical work for residential and commercial needs.</p>
+                <p>Contact: (987) 654-3210 | Email: electrician@example.com</p>
+            </div>
+            <div class="service-item">
+                <h3>Home Cleaning</h3>
+                <p>Rating: 4.3 ★</p>
+                <p>Professional cleaning services for a spotless home.</p>
+                <p>Contact: (555) 123-4567 | Email: cleaning@example.com</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Service Listing Platform. All rights reserved.</p>
+    </footer>
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const mainContent = document.getElementById('main-content');
+            sidebar.classList.toggle('active');
+            mainContent.classList.toggle('shift');
+        }
+    </script>
+</body>
+</html>

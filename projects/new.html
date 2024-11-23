@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service-Based Website</title>
+  <style>
+    /* Reset styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Background slideshow */
+    body {
+      animation: backgroundSlideshow 15s infinite;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    @keyframes backgroundSlideshow {
+      0% { background-image: url('https://via.placeholder.com/1920x1080?text=Image+1'); }
+      33% { background-image: url('https://via.placeholder.com/1920x1080?text=Image+2'); }
+      66% { background-image: url('https://via.placeholder.com/1920x1080?text=Image+3'); }
+      100% { background-image: url('https://via.placeholder.com/1920x1080?text=Image+1'); }
+    }
+
+    /* Header with search bar */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+    }
+
+    .search-bar input {
+      padding: 5px;
+      border: none;
+      border-radius: 5px;
+      width: 200px;
+    }
+
+    .search-bar button {
+      margin-left: 10px;
+      padding: 5px 10px;
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Sidebar styles */
+    .sidebar {
+      position: fixed;
+      top: 60px;
+      width: 200px;
+      height: calc(100% - 60px);
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 20px;
+      overflow-y: auto;
+      z-index: 9;
+    }
+
+    .left-sidebar {
+      left: 0;
+    }
+
+    .right-sidebar {
+      right: 0;
+    }
+
+    .sidebar h2 {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      margin: 10px 0;
+    }
+
+    .sidebar ul li a {
+      text-decoration: none;
+      color: white;
+    }
+
+    /* Main content */
+    .main-content {
+      margin: 60px 220px; /* Account for header and sidebars */
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+    }
+
+    .main-content h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .main-content p {
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with search bar -->
+  <header>
+    <h1>My Services</h1>
+    <div class="search-bar">
+      <input type="text" placeholder="Search services...">
+      <button>Search</button>
+    </div>
+  </header>
+
+  <!-- Left Sidebar -->
+  <div class="sidebar left-sidebar">
+    <h2>Menu</h2>
+    <ul>
+      <li><a href="#service1">Service 1</a></li>
+      <li><a href="#service2">Service 2</a></li>
+      <li><a href="#service3">Service 3</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Right Sidebar -->
+  <div class="sidebar right-sidebar">
+    <h2>Additional Info</h2>
+    <ul>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#terms">Terms of Service</a></li>
+      <li><a href="#privacy">Privacy Policy</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <h1>Welcome to Our Service Platform</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet lacus in urna tristique aliquam. Aenean at velit at lorem efficitur venenatis. Vivamus accumsan velit non nulla vehicula, nec commodo lectus vehicula.</p>
+    <p>Explore our services and learn how we can assist you in achieving your goals!</p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 My Services. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

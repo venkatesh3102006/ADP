@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Platform</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff5a5f;
+        }
+
+        nav {
+            display: flex;
+            gap: 1rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .action-buttons button {
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .login-btn {
+            background-color: white;
+            border: 1px solid #ccc;
+        }
+
+        .signup-btn {
+            background-color: #ff5a5f;
+            color: white;
+        }
+
+        /* Slideshow Hero Section */
+        .hero {
+            position: relative;
+            height: 70vh;
+            overflow: hidden;
+        }
+
+        .slideshow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .slideshow img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            opacity: 0;
+            animation: fadeInOut 12s infinite;
+        }
+
+        .slideshow img:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .slideshow img:nth-child(2) {
+            animation-delay: 4s;
+        }
+
+        .slideshow img:nth-child(3) {
+            animation-delay: 8s;
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% {
+                opacity: 0;
+            }
+            25%, 75% {
+                opacity: 1;
+            }
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .search-bar input {
+            padding: 1rem;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 40%;
+        }
+
+        .search-bar button {
+            background-color: #ff5a5f;
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            background-color: #e0484c;
+        }
+
+        
+        .categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding: 2rem 1rem;
+        }
+
+        .category {
+            text-align: center;
+            width: 100px;
+        }
+
+        .category img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 0.5rem;
+        }
+
+        .category span {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <div class="logo">ServicePro</div>
+        <nav>
+            <a href="#">Interior</a>
+            <a href="#">Exterior</a>
+            <a href="#">Lawn & Garden</a>
+            <a href="#">More</a>
+            <a href="#">Advice</a>
+        </nav>
+        <div class="action-buttons">
+            <button class="login-btn">Log In</button>
+            <button class="signup-btn">Sign Up</button>
+        </div>
+    </header>
+
+    
+    <section class="hero">
+        <div class="slideshow">
+            <img src="s1.jpeg" alt="Plumbing Services">
+            <img src="skct.jpg" alt="Landscaping Services">
+            <img src="s2.jpeg" alt="Electrical Services">
+        </div>
+        <div class="hero-content">
+            <h1>Find top-rated certified pros in your area.</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="How can we help?">
+                <input type="text" placeholder="Zip code">
+                <button>search</button>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="categories">
+        <div class="category">
+            <img src="https://img.icons8.com/color/48/toolbox.png" alt="Handyperson">
+            <span>Handyperson</span>
+        </div>
+        <div class="category">
+            <img src="https://img.icons8.com/color/48/landscaping.png" alt="Landscaping">
+            <span>Landscaping</span>
+        </div>
+        <div class="category">
+            <img src="https://img.icons8.com/color/48/plumber.png" alt="Plumbing">
+            <span>Plumbing</span>
+        </div>
+        <div class="category">
+            <img src="https://img.icons8.com/color/48/electrical.png" alt="Electrical">
+            <span>Electrical</span>
+        </div>
+        <div class="category">
+            <img src="https://img.icons8.com/color/48/renovation.png" alt="Remodeling">
+            <span>Remodeling</span>
+        </div>
+        <div class="category">
+            <img src="https://img.icons8.com/color/48/roofing.png" alt="Roofing">
+            <span>Roofing</span>
+        </div>
+    </section>
+</body>
+</html>
